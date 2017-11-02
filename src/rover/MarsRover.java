@@ -9,10 +9,13 @@ public class MarsRover {
 
     private String direction;
     private Point point;
+    private CommandFactory commandFactory;
 
-    public MarsRover(Point point, String direction) {
+
+    public MarsRover(Point point, String direction, CommandFactory commandFactory) {
         this.point = point;
         this.direction = direction;
+        this.commandFactory = commandFactory;
     }
 
     public String getDirection() {
@@ -25,16 +28,8 @@ public class MarsRover {
 
     public String run(String input) {
         String[] commands = convertInputIntoCommands(input);
-        Command roverCommand = new EmptyCommand();
         for (String command : commands) {
-            if (command.equals("M")) {
-                roverCommand = new MoveCommand();
-            } else if (command.equals("R")) {
-                roverCommand = new RightCommand();
-            } else if (command.equals("L")) {
-                roverCommand = new LeftCommand();
-            }
-            roverCommand.execute(this);
+            commandFactory.getCommand(command).execute(this);
         }
         return asString();
     }

@@ -12,7 +12,7 @@ public class MarsRoverTest {
 
     @BeforeEach
     public void setUp() throws Exception {
-        rover = new MarsRover(new Point(1,1), "N");
+        rover = new MarsRover(new Point(1,1), "N", new CommandFactory());
     }
 
     @Test
