@@ -83,4 +83,11 @@ public class MarsRover {
     }
 
 
+    public Point getPoint() {
+        return point;
+    }
+
+    public void setPoint(Point point) {
+        this.point = point;
+    }
 }
