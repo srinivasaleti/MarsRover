@@ -16,8 +16,16 @@ public class MarsRover {
         return direction;
     }
 
+    public Point getPoint() {
+        return point;
+    }
+
     public void setDirection(Direction direction) {
         this.direction = direction;
+    }
+
+    public void setPoint(Point point) {
+        this.point = point;
     }
 
     public String run(String input) {
@@ -32,11 +40,4 @@ public class MarsRover {
         return point.toString() + " " + direction.representation();
     }
 
-    public Point getPoint() {
-        return point;
-    }
-
-    public void setPoint(Point point) {
-        this.point = point;
-    }
 }
