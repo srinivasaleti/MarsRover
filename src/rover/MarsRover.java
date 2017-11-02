@@ -25,45 +25,23 @@ public class MarsRover {
 
     public String run(String input) {
         String[] commands = convertInputIntoCommands(input);
-
+        Command roverCommand = new EmptyCommand();
         for (String command : commands) {
             if (command.equals("M")) {
-                move();
+                roverCommand = new MoveCommand();
             } else if (command.equals("R")) {
-                turnRight();
+                roverCommand = new RightCommand();
             } else if (command.equals("L")) {
-                turnLeft();
+                roverCommand = new LeftCommand();
             }
+            roverCommand.execute(this);
         }
-
         return asString();
-    }
-
-    private void move() {
-        if (direction.equals("N")) {
-            point = point.update(new Point(0, 1));
-        } else if (direction.equals("S")) {
-            point = point.update(new Point(0, -1));
-        } else if (direction.equals("E")) {
-            point = point.update(new Point(1, 0));
-        } else if (direction.equals("W")) {
-            point = point.update(new Point(-1, 0));
-        }
     }
 
     private String asString() {
 
-        return  point.toString() + " " + direction;
-    }
-
-    private void turnLeft() {
-
-        direction = DIRECTIONS.get((DIRECTIONS.indexOf(direction) + 3) % DIRECTIONS.size());
-    }
-
-    private void turnRight() {
-
-        direction = DIRECTIONS.get((DIRECTIONS.indexOf(direction) + 1) % DIRECTIONS.size());
+        return point.toString() + " " + direction;
     }
 
     private static String[] convertInputIntoCommands(String input) {
