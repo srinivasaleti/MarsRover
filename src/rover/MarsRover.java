@@ -2,21 +2,21 @@ package rover;
 
 public class MarsRover {
 
-    private String direction;
+    private Direction direction;
     private Point point;
     private CommandFactory commandFactory;
 
-    public MarsRover(Point point, String direction, CommandFactory commandFactory) {
+    public MarsRover(Point point, Direction direction, CommandFactory commandFactory) {
         this.point = point;
         this.direction = direction;
         this.commandFactory = commandFactory;
     }
 
-    public String getDirection() {
+    public Direction getDirection() {
         return direction;
     }
 
-    public void setDirection(String direction) {
+    public void setDirection(Direction direction) {
         this.direction = direction;
     }
 
@@ -29,7 +29,7 @@ public class MarsRover {
     }
 
     private String asString() {
-        return point.toString() + " " + direction;
+        return point.toString() + " " + direction.representation();
     }
 
     public Point getPoint() {

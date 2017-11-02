@@ -4,7 +4,7 @@ public class MoveCommand implements Command {
 
     @Override
     public void execute(MarsRover marsRover) {
-        String direction = marsRover.getDirection();
+        String  direction = marsRover.getDirection().representation();
         Point point = marsRover.getPoint();
         if (direction.equals("N")) {
             marsRover.setPoint(point.update(new Point(0, 1)));
