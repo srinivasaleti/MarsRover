@@ -12,6 +12,11 @@ public enum Direction {
         public Direction rightDirection() {
             return EAST;
         }
+
+        @Override
+        public String representation() {
+            return "N";
+        }
     },
     EAST {
         @Override
@@ -22,6 +27,11 @@ public enum Direction {
         @Override
         public Direction rightDirection() {
             return SOUTH;
+        }
+
+        @Override
+        public String representation() {
+            return "E";
         }
     },
     WEST {
@@ -34,6 +44,11 @@ public enum Direction {
         public Direction rightDirection() {
             return NORTH;
         }
+
+        @Override
+        public String representation() {
+            return "W";
+        }
     },
     SOUTH {
         @Override
@@ -45,9 +60,16 @@ public enum Direction {
         public Direction rightDirection() {
             return WEST;
         }
+
+        @Override
+        public String representation() {
+            return "S";
+        }
     };
 
     public abstract Direction leftDirection();
 
     public abstract Direction rightDirection();
+
+    public abstract String representation();
 }
