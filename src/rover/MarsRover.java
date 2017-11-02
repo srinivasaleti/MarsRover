@@ -7,9 +7,6 @@ public class MarsRover {
     private static final List<String> VALID_COMMANDS = Arrays.asList("L", "R", "M");
     private static final List<String> DIRECTIONS = Arrays.asList("N", "E", "S", "W");
 
-    private static final int Y = 1;
-    private static final int X = 0;
-
     private String direction;
     private Point point;
 
