@@ -9,7 +9,7 @@ public class Point {
         this.y = y;
     }
 
-    Point update(Point offset) {
+    Point pointAfter(Point offset) {
         return new Point(x + offset.x, y + offset.y);
     }
 
