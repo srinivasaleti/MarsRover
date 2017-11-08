@@ -30,8 +30,12 @@ public class MarsRover {
 
     public String run(String input) {
         String[] commands = Parser.convertInputIntoCommands(input);
+        Command marsRoverCommand;
         for (String command : commands) {
-            commandFactory.getCommand(command).execute(this);
+            marsRoverCommand = commandFactory.getCommand(command);
+            if(marsRoverCommand != null){
+                marsRoverCommand.execute(this);
+            }
         }
         return asString();
     }

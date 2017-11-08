@@ -9,6 +9,6 @@ public class CommandFactory {
         } else if (command.equals("R")){
             return  new RightCommand();
         }
-        return new EmptyCommand();
+        return null;
     }
 }
