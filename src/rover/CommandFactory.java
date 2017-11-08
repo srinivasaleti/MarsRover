@@ -2,11 +2,11 @@ package rover;
 
 public class CommandFactory {
     Command getCommand(String command) {
-        if(command.equals( "L")) {
+        if( "L".equals(command)) {
             return new LeftCommand();
-        } else if (command.equals("M")) {
+        } else if ("M".equals(command)) {
             return new MoveCommand();
-        } else if (command.equals("R")){
+        } else if ("R".equals(command)){
             return  new RightCommand();
         }
         return null;
